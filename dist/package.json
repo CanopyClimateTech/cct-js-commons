@@ -1,0 +1,35 @@
+{
+    "name": "@canopy/js-commons",
+    "version": "1.0.0",
+    "description": "",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "bin": {
+        "bundle": "dist/bin/bundle.js"
+    },
+    "scripts": {
+        "build": "rm -rf build && tsc && tsc-alias",
+        "predist": "npm run build && rm -rf dist",
+        "prettify": "prettier --write .",
+        "dist": "mkdir dist && cp -r build/* dist && cp package.json dist && npm run bundle",
+        "bundle": "webpack",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Canopy Climate Technologies, Inc.",
+    "license": "SEE LICENSE IN LICENSE.md",
+    "devDependencies": {
+        "@types/browserify": "12.0.37",
+        "crypto-browserify": "^3.12.0",
+        "path-browserify": "^1.0.1",
+        "stream-browserify": "^3.0.0",
+        "tsc-alias": "1.8.2",
+        "typescript": "5.1.6",
+        "webpack": "^5.75.0",
+        "webpack-bundle-analyzer": "^4.8.0",
+        "webpack-cli": "^5.0.1"
+    },
+    "dependencies": {
+        "browserify": "17.0.0",
+        "json-object-mapper": "1.7.1"
+    }
+}
